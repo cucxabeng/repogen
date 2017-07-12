@@ -1,0 +1,12 @@
+{
+    "name": "cucxabeng/repogen",
+    "description": "Repository generator",
+    "authors": [
+        {
+            "name": "haidang",
+            "email": "cucabeng@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

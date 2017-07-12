@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Repositories;
+
+use Illuminate\Http\Request;
+use DummyContract as Contract;
+
+class DummyClass implements Contract
+{
+    public function getDatatables(Request $request)
+    {
+        //
+    }
+
+    protected function getActionColumnPermissions($item)
+    {
+        return [
+            //
+        ];
+    }
+}
