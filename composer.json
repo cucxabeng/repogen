@@ -7,6 +7,11 @@
             "email": "cucabeng@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Cucxabeng\\Repogen\\": "src/"
+        }
+    },
     "minimum-stability": "dev",
     "require": {},
     "prefer-stable": true
