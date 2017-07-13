@@ -53,12 +53,27 @@ class RepositoryGeneratorCommand extends GeneratorCommand
      */
     protected function buildClass($name)
     {
+        $modelName = str_before($name, 'Repository');
+
         $replace = [
             'DummyContract' => 'App\Contracts\Repositories\\'.class_basename($name),
+            'DummyFullModelClass' => 'App\Models\\'.class_basename($modelName),
+            'DummyModelVariables' => camel_case(str_plural(class_basename($modelName))),
+            'DummyModelVariable' => camel_case(str_singular(class_basename($modelName))),
+            'DummyModel' => class_basename($modelName),
         ];
 
         return str_replace(
             array_keys($replace), array_values($replace), parent::buildClass($name)
         );
     }
+}
+
+/*
+ * Laravel 5.4 not found str_before :(
+ *
+ */
+function str_before($subject, $search)
+{
+    return $search == '' ? $subject : explode($search, $subject)[0];
 }

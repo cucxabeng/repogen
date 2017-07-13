@@ -2,17 +2,22 @@
 
 namespace App\Repositories;
 
+use Datatables;
 use Illuminate\Http\Request;
+use DummyFullModelClass;
 use DummyContract as Contract;
 
 class DummyClass implements Contract
 {
     public function getDatatables(Request $request)
     {
-        //
+        $DummyModelVariables = DummyModel::query();
+
+        return Datatables::of($DummyModelVariables)
+            ->make(true);
     }
 
-    protected function getActionColumnPermissions($item)
+    protected function getActionColumnPermissions($DummyModelVariable)
     {
         return [
             //
